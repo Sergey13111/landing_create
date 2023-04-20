@@ -10,11 +10,15 @@ export const theme = createTheme({
 		primary: {
 			main: '#000',
 			light: '#fff',
+			dark: '#2D3240',
 		},
 		secondary: {
 			main: '#F54329',
 			contrastText: '#fff',
 			dark: '#bc1b04fc',
+		},
+		grey: {
+			300: '#2d3240ab',
 		},
 		info: {
 			main: '#BAFD37',
@@ -45,7 +49,7 @@ export const theme = createTheme({
 		fontSize: 16,
 		h1: {
 			fontFamily: ['Oswald', 'sans-serif'].join(','),
-			fontSize: 90,
+			fontSize: 65,
 			fontWeight: 500,
 		},
 		h2: {
@@ -68,6 +72,10 @@ export const theme = createTheme({
 			lineHeight: '21px',
 			fontSize: 18,
 			fontWeight: 400,
+		},
+		body1: {
+			lineHeight: '27px',
+			fontSize: 16,
 		},
 	},
 });

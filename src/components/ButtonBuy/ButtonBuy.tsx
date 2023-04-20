@@ -12,7 +12,7 @@ const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
 	backgroundColor: theme.palette.secondary.main,
 	color: theme.palette.secondary.contrastText,
 	padding: '15px',
-	borderRadius: '100%',
+	borderRadius: '50%',
 	boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.25)',
 	transform: 'rotate(19.5deg)',
 	'&:hover': {
