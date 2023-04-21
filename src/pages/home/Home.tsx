@@ -2,6 +2,9 @@ import { Box, Container, Grid, Paper, SvgIcon, Typography } from '@mui/material'
 import { ButtonApp } from '../../components/ButtonApp';
 import { ReactComponent as iconApple } from '../../assets/iconApple.svg';
 import { ReactComponent as iconAndroid } from '../../assets/iconAndroid.svg';
+import { Slider } from '../../components/Slider';
+import { Look } from '../../components/Look';
+import { Mask } from '../../components/Mask';
 
 const Home = () => {
 	return (
@@ -10,57 +13,76 @@ const Home = () => {
 				<Grid
 					item
 					xs={6}>
-					<Box sx={{ display: 'flex', flexDirection: 'column' }}>
-						<Box sx={{ mb: 1.5 }}>
-							<ButtonApp sx={{ marginRight: '-4px' }}>
-								<SvgIcon
-									component={iconApple}
-									viewBox='0 0 27 27'
-								/>
-							</ButtonApp>
-							<ButtonApp sx={{ marginLeft: '-4px' }}>
-								<SvgIcon
-									component={iconAndroid}
-									viewBox='0 0 27 27'
-								/>
-							</ButtonApp>
+					<Box
+						sx={{
+							height: '100%',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'space-between',
+						}}>
+						<Box sx={{ display: 'flex', flexDirection: 'column' }}>
+							<Box sx={{ mb: 1.5 }}>
+								<ButtonApp sx={{ marginRight: '-4px' }}>
+									<SvgIcon
+										component={iconApple}
+										viewBox='0 0 27 27'
+									/>
+								</ButtonApp>
+								<ButtonApp sx={{ marginLeft: '-4px' }}>
+									<SvgIcon
+										component={iconAndroid}
+										viewBox='0 0 27 27'
+									/>
+								</ButtonApp>
+							</Box>
+							<Typography
+								variant='h5'
+								component='span'>
+								App available
+							</Typography>
 						</Box>
-						<Typography
-							variant='h5'
-							component='span'>
-							App available
-						</Typography>
-					</Box>
-					<Box sx={{ pr: 2 }}>
-						<Typography
-							variant='h1'
-							component='h1'>
-							CHOOSE YOUR WINTER APPAREL
-						</Typography>
+						<Box sx={{ pr: 2 }}>
+							<Typography
+								variant='h1'
+								component='h1'
+								sx={{ fontSize: { xs: 36, sm: 54, lg: 65 } }}>
+								CHOOSE YOUR WINTER <Look /> APPAREL
+							</Typography>
+						</Box>
 					</Box>
 				</Grid>
 				<Grid
 					item
-					xs={6}></Grid>
+					xs={6}>
+					<Mask />
+				</Grid>
 			</Grid>
-			<Box mb={20}>
+			<Box
+				mb={20}
+				mt={17}>
 				<Paper
 					elevation={0}
 					sx={{ pt: 5, pb: 12.5 }}>
-					<Box mb={6}>
+					<Box
+						mb={6}
+						sx={{ textAlign: 'center' }}>
 						<Typography
 							variant='h2'
 							component='h2'
-							mb={6.5}>
+							mb={6.5}
+							sx={{ fontSize: { xs: 24, sm: 34, lg: 54 } }}>
 							CHOOSE LOOKS
 						</Typography>
-						<Box>Slider</Box>
+						<Box sx={{ minWidth: 0 }}>
+							<Slider />
+						</Box>
 					</Box>
 					<Box px={6}>
 						<Typography
 							variant='h2'
 							component='h2'
-							mb={7.5}>
+							mb={7.5}
+							sx={{ textAlign: 'center', fontSize: { xs: 24, sm: 34, lg: 54 } }}>
 							MORE ABOUT US
 						</Typography>
 						<Typography

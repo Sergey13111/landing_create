@@ -54,7 +54,7 @@ export const theme = createTheme({
 		},
 		h2: {
 			fontFamily: ['Oswald', 'sans-serif'].join(','),
-			fontSize: 60,
+			fontSize: 54,
 			fontWeight: 500,
 		},
 		h3: {
@@ -73,6 +73,7 @@ export const theme = createTheme({
 			fontSize: 18,
 			fontWeight: 400,
 		},
+
 		body1: {
 			lineHeight: '27px',
 			fontSize: 16,
