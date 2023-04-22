@@ -1,0 +1,10 @@
+.line {
+	stroke-dasharray: 7000;
+	stroke-dashoffset: 7000;
+	animation: line 6s linear forwards;
+}
+@keyframes line {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}

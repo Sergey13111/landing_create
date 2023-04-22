@@ -10,23 +10,36 @@ import im4 from '../../assets/im4.png';
 import imMas from '../../assets/imMas.png';
 
 import { ReactComponent as create } from '../../assets/create.svg';
+import { Autoplay, FreeMode, Navigation } from 'swiper';
+import { SwiperSlide, Swiper } from 'swiper/react';
 
-const images = [im4, im3, im2, im, im1];
+const images = [imMas, im4, im3, im2, im, im1];
 
 const Mask: React.FC = () => {
 	return (
 		<>
 			<Box className={styles.sliderContainer}>
-				<Box sx={{ mb: 10, width: '100%', height: '100%' }}>
-					<img
-						src={imMas}
-						alt='Looks'
-						className={styles.maskWrapper}
-					/>
+				<Box sx={{ mb: 10, width: '100%', height: '100%', position: 'relative' }}>
 					<SvgIcon
 						component={create}
 						viewBox='0 0 525 257'
 					/>
+
+					<Swiper
+						slidesPerView={1}
+						freeMode
+						autoplay
+						modules={[Navigation, FreeMode, Autoplay]}>
+						{images.map((image, index) => (
+							<SwiperSlide key={index}>
+								<img
+									src={image}
+									alt={`Slide ${index}`}
+									className={styles.maskWrapper}
+								/>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</Box>
 			</Box>
 		</>

@@ -1,5 +1,7 @@
 import { Button, ButtonProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { motion } from 'framer-motion';
+import { forwardRef } from 'react';
 
 const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
 	width: '55px',
@@ -17,14 +19,16 @@ const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
 	},
 }));
 
-const ButtonApp: React.FC<ButtonProps> = ({ children, ...rest }) => {
+const ButtonApp: React.FC<ButtonProps> = forwardRef(({ children, ...rest }, ref) => {
 	return (
 		<CustomButton
 			variant='contained'
+			ref={ref}
 			{...rest}>
 			{children}
 		</CustomButton>
 	);
-};
+});
 
+export const MButtonApp = motion(ButtonApp);
 export default ButtonApp;

@@ -1,16 +1,16 @@
 import { Navigation, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
-
 import im from '../../assets/im.png';
 import im1 from '../../assets/im1.png';
 import im2 from '../../assets/im2.png';
 import im3 from '../../assets/im3.png';
 import im4 from '../../assets/im4.png';
+import { Box } from '@mui/material';
 
-const images = [im4, im3, im2, im, im1];
+const images = [im4, im3, im2, im, im1, im2];
 
-const Slider = () => {
+const Slider: React.FC = () => {
 	return (
 		<>
 			<Swiper
@@ -19,13 +19,10 @@ const Slider = () => {
 				spaceBetween={30}
 				watchOverflow={true}
 				freeMode={true}
-				navigation
-				// navigation={{
-				// 	nextEl: '.swiper-button-next',
-				// 	prevEl: '.swiper-button-prev',
-				// 	// prevButton: <Button />,
-				// 	// nextButton: <Button />,
-				// }}
+				navigation={{
+					nextEl: '.swiper-button-next, .next',
+					prevEl: '.swiper-button-prev',
+				}}
 				initialSlide={2}
 				breakpoints={{
 					320: {
@@ -63,14 +60,32 @@ const Slider = () => {
 						/>
 					</SwiperSlide>
 				))}
-				{/* <div className='swiper-button-prev'>
-					<ButtonApp>{'<'}</ButtonApp>
-				</div>
-				<div
-					style={{ width: '30px', height: '30px' }}
-					className='swiper-button-next'>
-					<ButtonApp>{'>ghghgh'}</ButtonApp>
-				</div> */}
+				<Box
+					className='swiper-button-prev'
+					sx={{
+						position: 'absolute',
+						width: 76,
+						height: 76,
+						left: -22,
+						borderRadius: '50%',
+						boxShadow: '0px 2px 1px rgba(0, 0, 0, 0.25)',
+						backgroundColor: '#fff',
+						color: '#888',
+						zIndex: 1000,
+					}}></Box>
+				<Box
+					className='swiper-button-next'
+					sx={{
+						position: 'absolute',
+						width: 76,
+						height: 76,
+						right: -22,
+						borderRadius: '50%',
+						boxShadow: '0px 2px 1px rgba(0, 0, 0, 0.25)',
+						backgroundColor: '#fff',
+						color: '#888',
+						zIndex: 1000,
+					}}></Box>
 			</Swiper>
 		</>
 	);
